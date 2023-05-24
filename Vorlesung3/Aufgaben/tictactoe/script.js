@@ -3,13 +3,15 @@ let currentPlayer = 'X';
 let gameOver = false;
 
 function makeMove(index) {
-    if (board[index] === '') {
+    if (board[index] === '' && !gameOver) {
         document.getElementsByClassName("cell")[index].innerHTML = currentPlayer;
         board[index] = currentPlayer;
 
         if (checkWin()) {
             console.log(`Current player ${currentPlayer} has won!`)
             gameOver = true;
+            setT
+            alert(`${currentPlayer} has won!`)
         }
         if (gameOver || !board.includes('')) {
             gameOver = true;
@@ -32,8 +34,6 @@ function checkWin() {
         (board[2] === board[4] && board[4] === board[6] && board[2] !== '')
     ) return true;
     return false;
-
-
 }
 
 function resetGame() {
@@ -42,4 +42,6 @@ function resetGame() {
         board[i] = ''
         document.getElementsByClassName("cell")[i].innerHTML = ''
     }
+    gameOver = false;
+    currentPlayer = 'X'
 }
