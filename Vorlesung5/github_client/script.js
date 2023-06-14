@@ -1,4 +1,3 @@
-const accesstoken = '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';
 
 list = document.getElementById('repos-list')
 message = document.getElementById('message')
